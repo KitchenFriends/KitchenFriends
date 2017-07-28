@@ -4,6 +4,11 @@ import { View, Image, Text } from 'react-native';
 import { Icon } from 'react-native-elements';
 
 class FeedRecipe extends React.Component {
+  
+  onLearnMore = food => {
+    this.props.navigation.navigate('Details', { ...food });
+  };
+
   render() {
     return (
       <Card>
@@ -12,9 +17,9 @@ class FeedRecipe extends React.Component {
             <Title>Baked Chicken</Title>
             <Creator>By Zorra</Creator>
           </Description>
-          <View style={{justifyContent: 'flex-end'}}>
+
           <Icon name="favorite-border" color="red"/>
-          </View>
+          
         </View>
         <FeedImage source={require('../../dummyData/media/chicken.png')}/>
       </Card>
