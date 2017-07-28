@@ -1,14 +1,21 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { View, Image, Text } from 'react-native';
+import { Icon } from 'react-native-elements';
 
 class FeedRecipe extends React.Component {
   render() {
     return (
       <Card>
-        <Description>
-          <Title>Baked Chicken</Title>
-        </Description>
+        <View  style={{flexDirection: 'row'}}>
+          <Description>
+            <Title>Baked Chicken</Title>
+            <Creator>By Zorra</Creator>
+          </Description>
+          <View style={{justifyContent: 'flex-end'}}>
+          <Icon name="favorite-border" color="red"/>
+          </View>
+        </View>
         <FeedImage source={require('../../dummyData/media/chicken.png')}/>
       </Card>
     );
@@ -27,13 +34,20 @@ const Card = styled.View`
 `;
 
 const Description = styled.View`
+  display: flex;
+  flex-direction: column;
   height: 50;
+  justify-content: flex-start;
 `;
 
 const Title = styled.Text`
-  margin-left: 10;
-  align-self: center;
-`
+  padding-left: 10;
+  padding-top: 13;
+`;
+
+const Creator = styled.Text`
+  padding-left: 10;
+`;
 
 const FeedImage = styled.Image`
   width: 300;
