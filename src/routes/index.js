@@ -2,29 +2,33 @@ import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-// import Feed from '../screens/Feed';
-// import UserDetail from '../screens/UserDetail';
-// import Item from '../screens/Item';
-// import Box from '../screens/Box';
+import Feed from '../screens/Feed';
+import UserDetail from '../screens/UserDetail';
+
+import FoodFeed from '../screens/FoodFeed'
+import FoodDetails from '../screens/FoodDetails'
 
 import Home from '../screens/Home';
 import Search from '../screens/Search';
 import Cook from '../screens/Cook';
 
-// export const FeedStack = StackNavigator({
-//   Feed: {
-//     screen: Feed
-//   },
-//   Details: {
-//     screen: UserDetail
-//   },
-//   Item: {
-//     screen: Item
-//   },
-//   Box: {
-//     screen: Box
-//   }
-// });
+export const FeedStack = StackNavigator({
+  Feed: {
+    screen: Feed
+  },
+  Details: {
+    screen: UserDetail
+  }  
+});
+
+export const CardStack = StackNavigator({
+  Card: {
+    screen: FoodFeed
+  },
+  Details: {
+    screen: FoodDetails
+  }  
+});
 
 export const Tabs = TabNavigator(
   {
@@ -43,14 +47,14 @@ export const Tabs = TabNavigator(
       }
     },
     Add: {
-      screen: Search,
+      screen: FeedStack,
       navigationOptions: {
         tabBarlabel: 'Add',
         tabBarIcon: ({ tintColor }) => <Icon name="add" size={25} color={tintColor} />
       }
     },
     Cook: {
-      screen: Cook,
+      screen: CardStack,
       navigationOptions: {
         tabBarlabel: 'Cook',
         tabBarIcon: ({ tintColor }) => <Icon name="cook" size={25} color={tintColor} />
