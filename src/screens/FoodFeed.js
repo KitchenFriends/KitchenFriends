@@ -5,9 +5,14 @@ import { foods } from '../data';
 import { Text, View, ScrollView, FlatList, Button,TouchableOpacity } from 'react-native';
 import FeedRecipe from '../components/FeedRecipe';
 
+
 class FoodFeed extends Component {
   onLearnMore = food => {
+<<<<<<< HEAD
     console.log('hello')
+=======
+    console.log('ON FUCKING SHIIT')
+>>>>>>> Changes view to touchable opacity
     this.props.navigation.navigate('Details', { ...food });
   };
 
