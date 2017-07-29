@@ -7,9 +7,12 @@ import FoodDetails from '../screens/FoodDetails'
 
 import Home from '../screens/Home'; //not used
 import Search from '../screens/Search';
-import User from '../screens/User'; //not used
+import User from '../screens/User'; 
 import Share from '../screens/Share'
 
+//ShareStack
+import Ingredient from '../screens/Ingredient'
+import Direction from '../screens/Direction'
 
 
 export const CardStack = StackNavigator({
@@ -19,6 +22,19 @@ export const CardStack = StackNavigator({
   Details: {
     screen: FoodDetails
   }  
+});
+
+export const ShareStack = StackNavigator({
+  Home: {
+    screen: Share
+  },
+  Ingredients : {
+    screen: Ingredient
+  },
+  Directions : {
+    screen: Direction
+  },
+    
 });
 
 export const Tabs = TabNavigator(
@@ -38,7 +54,7 @@ export const Tabs = TabNavigator(
       }
     },
     Share: {
-      screen: Share,
+      screen: ShareStack,
       navigationOptions: {
         tabBarlabel: 'Share',
         tabBarIcon: ({ tintColor }) => <Icon name="add" size={30} color={tintColor} />

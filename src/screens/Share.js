@@ -6,6 +6,14 @@ class Share extends React.Component {
     text: ''
   };
 
+  addIngredient = food => {
+    this.props.navigation.navigate('Ingredients');
+  };
+
+  addDirections = food => {
+    this.props.navigation.navigate('Directions');
+  };
+
   render() {
     return (
       <View>
@@ -18,10 +26,9 @@ class Share extends React.Component {
         <Button title='upload photo'/>
         
         <Text>Ingredients</Text>
-        <Button title='Add Ingredient'/>
-
+        <Button title='Add Ingredient' onPress={()=>this.addIngredient()}/>
         <Text>Directions</Text>
-        <Button title='Add Directions'/>
+        <Button title='Add Direction' onPress={()=>this.addDirections()}/>
       </View>
     );
   }
