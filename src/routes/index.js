@@ -7,7 +7,6 @@ import UserDetail from '../screens/UserDetail';
 
 import FoodFeed from '../screens/FoodFeed'
 import FoodDetails from '../screens/FoodDetails'
-import FeedRecipe from '../components/FeedRecipe';
 
 import Home from '../screens/Home';
 import Search from '../screens/Search';
