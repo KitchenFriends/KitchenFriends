@@ -12,18 +12,14 @@ class FoodFeed extends Component {
 
   render() {
     return (
-      <Container>
+      <View>
         {/* <Button title="Add Item" onPress={() => this.props.navigation.navigate('Item')} /> */}
         {/* <Button title="Add Box" onPress={() => this.props.navigation.navigate('Box')} /> */}
 
-        {/*<ScrollView>*/}
-        {/*<List>*/}
-          <FlatList>
+          <FlatList
             data={foods}
-            renderItem={({ item }) => {
-              console.log('INSIDE RENDER ITEMS')
-            
-              return <FeedRecipe 
+            renderItem={({item}) => {
+              return <FeedRecipe
                 key={item.title}
                 roundAvatar
                 avatar={{ uri: item.avatar }}
@@ -32,20 +28,8 @@ class FoodFeed extends Component {
                 onPress={() => this.onLearnMore(item)}
               />
             }}
-            {/*{foods.map(food =>
-              <FeedRecipe
-                key={food.title}
-                roundAvatar
-                avatar={{ uri: food.avatar }}
-                title={food.title.toUpperCase()}
-                subtitle={food.author}
-                onPress={() => this.onLearnMore(food)}
-              />
-            )}*/}
-          </FlatList>
-        {/*</List>*/}
-        {/*</ScrollView>*/}
-      </Container>
+          />
+      </View>
     );
   }
 }
@@ -53,5 +37,5 @@ class FoodFeed extends Component {
 export default FoodFeed;
 
 const Container = styled.View`
-  flex: 1;
+ 
 `

@@ -26,7 +26,7 @@ export const CardStack = StackNavigator({
     screen: FoodFeed
   },
   Details: {
-    screen: FoodDetails
+    screen: FeedRecipe
   }  
 });
 
