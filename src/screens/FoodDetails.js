@@ -1,26 +1,35 @@
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
+import styled from 'styled-components/native';
+import { View, ScrollView } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
+import Ingredients from '../components/Ingredients';
+import Directions from '../components/Directions';
 
 
-class FeedDetails extends Component {
+class FoodDetails extends Component {
   render() {
   
   const { title, author, favs, comments, avatar, spins, servings,ingredients,directions } = this.props.navigation.state.params;
 
     return (
       <ScrollView>
-        <Tile
+        {/*<Tile
           imageSrc={{ uri: avatar }}
           featured
           title={title}
           caption={author}
-        />
-
+        />*/}
+        <View>
+          <FoodImage source={{ uri: avatar }} />
+        </View>
         <List>
           <ListItem title="Favs" rightTitle={favs} hideChevron />
           <ListItem title="comments" rightTitle={comments} hideChevron />
         </List>
+
+        <Ingredients ingredients={ingredients} />
+
+        <Directions directions={directions} />
 
         {/* <List>
           <ListItem title="Username" rightTitle={ingredients} hideChevron />
@@ -30,4 +39,8 @@ class FeedDetails extends Component {
   }
 }
 
-export default FeedDetails;
+export default FoodDetails;
+
+const FoodImage = styled.Image`
+  height: 200;
+`
