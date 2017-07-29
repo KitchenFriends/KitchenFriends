@@ -2,24 +2,14 @@ import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-
-import UserDetail from '../screens/UserDetail';
-
 import FoodFeed from '../screens/FoodFeed'
 import FoodDetails from '../screens/FoodDetails'
 
 import Home from '../screens/Home';
 import Search from '../screens/Search';
 import Cook from '../screens/Cook';
+import Share from '../screens/Share'
 
-export const FeedStack = StackNavigator({
-  Feed: {
-    screen: FoodFeed
-  },
-  Details: {
-    screen: UserDetail
-  }  
-});
 
 export const CardStack = StackNavigator({
   Card: {
@@ -32,32 +22,32 @@ export const CardStack = StackNavigator({
 
 export const Tabs = TabNavigator(
   {
-    Home: {
-      screen: Home,
+    Feed: {
+      screen: CardStack,
       navigationOptions: {
-        tabBarlabel: 'Home',
-        tabBarIcon: ({ tintColor }) => <Icon name="home" size={25} color={tintColor} />
+        tabBarlabel: 'Feed',
+        tabBarIcon: ({ tintColor }) => <Icon name="local-dining" size={30} color={tintColor} />
       }
     },
     Search: {
       screen: Search,
       navigationOptions: {
         tabBarlabel: 'Profile',
-        tabBarIcon: ({ tintColor }) => <Icon name="search" size={25} color={tintColor} />
+        tabBarIcon: ({ tintColor }) => <Icon name="search" size={30} color={tintColor} />
       }
     },
-    Add: {
-      screen: FeedStack,
+    Share: {
+      screen: Share,
       navigationOptions: {
-        tabBarlabel: 'Add',
-        tabBarIcon: ({ tintColor }) => <Icon name="add" size={25} color={tintColor} />
+        tabBarlabel: 'Share',
+        tabBarIcon: ({ tintColor }) => <Icon name="add" size={30} color={tintColor} />
       }
     },
-    Cook: {
+    Profile: {
       screen: CardStack,
       navigationOptions: {
-        tabBarlabel: 'Cook',
-        tabBarIcon: ({ tintColor }) => <Icon name="local-dining" size={25} color={tintColor} />
+        tabBarlabel: 'Profile',
+        tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={30} color={tintColor} />
       }
     }
   },
