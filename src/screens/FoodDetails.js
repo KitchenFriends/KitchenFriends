@@ -19,6 +19,7 @@ class FoodDetails extends Component {
           title={title}
           caption={author}
         />*/}
+        <Title>{author}'s {title}</Title>
         <View>
           <FoodImage source={{ uri: avatar }} />
         </View>
@@ -45,4 +46,7 @@ export default FoodDetails;
 
 const FoodImage = styled.Image`
   height: 200;
-`
+`;
+const Title = styled.Text`
+  align-self: center;
+`;
