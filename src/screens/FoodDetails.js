@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components/native';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
 import Ingredients from '../components/Ingredients';
 import Directions from '../components/Directions';
@@ -27,8 +27,10 @@ class FoodDetails extends Component {
           <ListItem title="comments" rightTitle={comments} hideChevron />
         </List>
 
+        <Text>Ingredients</Text>
         <Ingredients ingredients={ingredients} />
 
+        <Text>Directions</Text>
         <Directions directions={directions} />
 
         {/* <List>
