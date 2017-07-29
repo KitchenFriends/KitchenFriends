@@ -1,15 +1,15 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-class Cook extends React.Component {
+class User extends React.Component {
   render() {
     return (
       
         <View>
-            <Text>Sizzle</Text>
+            <Text>User</Text>
         </View>      
     );
   }
 }
 
-export default Cook;
+export default User;
