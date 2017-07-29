@@ -26,7 +26,7 @@ export const CardStack = StackNavigator({
     screen: FoodFeed
   },
   Details: {
-    screen: FeedRecipe
+    screen: FoodDetails
   }  
 });
 
@@ -57,7 +57,7 @@ export const Tabs = TabNavigator(
       screen: CardStack,
       navigationOptions: {
         tabBarlabel: 'Cook',
-        tabBarIcon: ({ tintColor }) => <Icon name="cook" size={25} color={tintColor} />
+        tabBarIcon: ({ tintColor }) => <Icon name="local-dining" size={25} color={tintColor} />
       }
     }
   },
