@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components/native';
-import { List, ListItem } from 'react-native-elements';
+import { List, ListItem, Icon } from 'react-native-elements';
 import { foods } from '../data';
 import { Text, View, ScrollView, FlatList, Button,TouchableOpacity } from 'react-native';
-import FeedRecipe from '../components/FeedRecipe';
+
 
 class FoodFeed extends Component {
   onLearnMore = food => {
-    console.log('hello')
     this.props.navigation.navigate('Details', { ...food });
   };
 
@@ -16,27 +15,63 @@ class FoodFeed extends Component {
       <View>
           <FlatList
             data={foods}
-            renderItem={({item}) => {
-              return <View>
+            renderItem={({item}) => (
+              <View>
                 <TouchableOpacity onPress={() => this.onLearnMore(item)} >
-                <FeedRecipe
-                key={item.title}
-                roundAvatar
-                avatar={{ uri: item.avatar }}
-                title={item.title.toUpperCase()}
-                subtitle={item.author}
-              />
-              </TouchableOpacity>  
+                  <Card>
+                    <View style={{flexDirection: 'row'}}>
+                    <Description>
+                      <Title>{item.title}</Title>
+                      <Creator>{item.author}</Creator>
+                    </Description>
+                    <Icon name="favorite-border" color="red" />
+                    </View>
+                    <FeedImage source={{ uri: item.avatar}} />
+                  </Card>
+                </TouchableOpacity>  
               </View>
-            }}
+            )}
           />
       </View>
     );
   }
 }
 
+                  // <FeedRecipe
+                  //   key={item.title}
+                  //   roundAvatar
+                  //   avatar={{ uri: item.avatar }}
+                  //   title={item.title.toUpperCase()}
+                  //   subtitle={item.author}
+                  // />
 export default FoodFeed;
 
-const Container = styled.View`
- 
-`
+
+const Card = styled.View`
+  border: solid grey;
+  border-radius: 6;
+  width: 300;
+  height: 450; 
+  align-self: center;
+`;
+
+const Description = styled.View`
+  display: flex;
+  flex-direction: column;
+  height: 50;
+  justify-content: flex-start;
+`;
+
+const Title = styled.Text`
+  padding-left: 10;
+  padding-top: 13;
+`;
+
+const Creator = styled.Text`
+  padding-left: 10;
+`;
+
+const FeedImage = styled.Image`
+  width: 300;
+  height: 350;
+`;

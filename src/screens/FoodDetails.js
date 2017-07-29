@@ -5,7 +5,8 @@ import { Tile, List, ListItem } from 'react-native-elements';
 
 class FeedDetails extends Component {
   render() {
-const { title, author, favs, comments, avatar, spins, servings,ingredients,directions } = this.props.navigation.state.params;
+  
+  const { title, author, favs, comments, avatar, spins, servings,ingredients,directions } = this.props.navigation.state.params;
 
     return (
       <ScrollView>
