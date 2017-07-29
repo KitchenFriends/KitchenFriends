@@ -5,10 +5,11 @@ import { Icon } from 'react-native-elements';
 import FoodFeed from '../screens/FoodFeed'
 import FoodDetails from '../screens/FoodDetails'
 
-import Home from '../screens/Home';
+import Home from '../screens/Home'; //not used
 import Search from '../screens/Search';
-import Cook from '../screens/Cook';
+import User from '../screens/User'; //not used
 import Share from '../screens/Share'
+
 
 
 export const CardStack = StackNavigator({
@@ -44,7 +45,7 @@ export const Tabs = TabNavigator(
       }
     },
     Profile: {
-      screen: CardStack,
+      screen: User,
       navigationOptions: {
         tabBarlabel: 'Profile',
         tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={30} color={tintColor} />
