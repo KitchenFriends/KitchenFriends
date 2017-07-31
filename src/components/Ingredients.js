@@ -4,8 +4,8 @@ import { View, Text } from 'react-native';
 class Ingredients extends React.Component {
  
   renderIngredients() {
-    return this.props.ingredients.map(ingredient => (
-      <View>
+    return this.props.ingredients.map((ingredient, index) => (
+      <View id={index}>
         <Text>{ingredient.amount} {ingredient.unit} {ingredient.ingredient}</Text>
       </View>  
     ))

@@ -37,13 +37,7 @@ class FoodFeed extends Component {
   }
 }
 
-                  // <FeedRecipe
-                  //   key={item.title}
-                  //   roundAvatar
-                  //   avatar={{ uri: item.avatar }}
-                  //   title={item.title.toUpperCase()}
-                  //   subtitle={item.author}
-                  // />
+
 export default FoodFeed;
 
 
@@ -53,6 +47,7 @@ const Card = styled.View`
   width: 300;
   height: 450; 
   align-self: center;
+  margin-bottom: 10;
 `;
 
 const Description = styled.View`
