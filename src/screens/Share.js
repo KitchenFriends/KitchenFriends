@@ -9,7 +9,7 @@ class Share extends React.Component {
   addIngredient = food => {
     this.props.navigation.navigate('Ingredients');
   };
-
+  
   addDirections = food => {
     this.props.navigation.navigate('Directions');
   };

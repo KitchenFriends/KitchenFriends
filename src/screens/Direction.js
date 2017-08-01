@@ -1,13 +1,25 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, TextInput, Button } from 'react-native';
 
 class Direction extends React.Component {
-  render() {
-    return (
+  state = {
+    text:''
+  }
+
+  static navigationOptions = ({ navigation }) => ({
+    title: `Add Direction`,
+    headerRight: <Button title='Done' onPress={()=>navigation.goBack()}/>
+  });
       
-        <View>
-            <Text>Direction</Text>
-        </View>      
+  render() {
+  const { goBack } = this.props.navigation;  
+
+    return (
+      <View>                
+        <TextInput style={{ height: 40 }} placeholder="Direction" onChangeText={text => this.setState({ text })}  value={this.state.text}/>
+        <Button title="Upload Picture" />
+        <Button title='Done' onPress={()=>goBack()}/>
+      </View>
     );
   }
 }
