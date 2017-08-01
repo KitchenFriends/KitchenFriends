@@ -32,7 +32,12 @@ export const ShareStack = StackNavigator({
     screen: Ingredient
   },
   Directions : {
-    screen: Direction
+    screen: Direction,
+    title:'OP',
+    headerTitle: 'Test',
+    navigationOptions: ({navigation}) => ({      
+      headerBackTitle: 'Testing'
+    }),
   },
     
 });
