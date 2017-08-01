@@ -2,24 +2,18 @@ import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-import Feed from '../screens/Feed';
-import UserDetail from '../screens/UserDetail';
-
 import FoodFeed from '../screens/FoodFeed'
 import FoodDetails from '../screens/FoodDetails'
 
-import Home from '../screens/Home';
+import Home from '../screens/Home'; //not used
 import Search from '../screens/Search';
-import Cook from '../screens/Cook';
+import User from '../screens/User'; 
+import Share from '../screens/Share'
 
-export const FeedStack = StackNavigator({
-  Feed: {
-    screen: Feed
-  },
-  Details: {
-    screen: UserDetail
-  }  
-});
+//ShareStack
+import Ingredient from '../screens/Ingredient'
+import Direction from '../screens/Direction'
+
 
 export const CardStack = StackNavigator({
   Card: {
@@ -30,34 +24,52 @@ export const CardStack = StackNavigator({
   }  
 });
 
+export const ShareStack = StackNavigator({
+  Home: {
+    screen: Share
+  },
+  Ingredients : {
+    screen: Ingredient
+  },
+  Directions : {
+    screen: Direction,
+    title:'OP',
+    headerTitle: 'Test',
+    navigationOptions: ({navigation}) => ({      
+      headerBackTitle: 'Testing'
+    }),
+  },
+    
+});
+
 export const Tabs = TabNavigator(
   {
-    Home: {
-      screen: Home,
+    Feed: {
+      screen: CardStack,
       navigationOptions: {
-        tabBarlabel: 'Home',
-        tabBarIcon: ({ tintColor }) => <Icon name="home" size={25} color={tintColor} />
+        tabBarlabel: 'Feed',
+        tabBarIcon: ({ tintColor }) => <Icon name="local-dining" size={30} color={tintColor} />
       }
     },
     Search: {
       screen: Search,
       navigationOptions: {
         tabBarlabel: 'Profile',
-        tabBarIcon: ({ tintColor }) => <Icon name="search" size={25} color={tintColor} />
+        tabBarIcon: ({ tintColor }) => <Icon name="search" size={30} color={tintColor} />
       }
     },
-    Add: {
-      screen: FeedStack,
+    Share: {
+      screen: ShareStack,
       navigationOptions: {
-        tabBarlabel: 'Add',
-        tabBarIcon: ({ tintColor }) => <Icon name="add" size={25} color={tintColor} />
+        tabBarlabel: 'Share',
+        tabBarIcon: ({ tintColor }) => <Icon name="add" size={30} color={tintColor} />
       }
     },
-    Cook: {
-      screen: CardStack,
+    Profile: {
+      screen: User,
       navigationOptions: {
-        tabBarlabel: 'Cook',
-        tabBarIcon: ({ tintColor }) => <Icon name="cook" size={25} color={tintColor} />
+        tabBarlabel: 'Profile',
+        tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={30} color={tintColor} />
       }
     }
   },

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import FeedRecipe from '../components/FeedRecipe';
 
 class Home extends React.Component {
   render() {
@@ -8,7 +7,6 @@ class Home extends React.Component {
       
         <View>
             <Text>Home!</Text>
-            <FeedRecipe />
         </View>      
     );
   }
