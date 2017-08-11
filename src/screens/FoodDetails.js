@@ -29,7 +29,7 @@ class FoodDetails extends Component {
         </List>
 
         <Text>Ingredients</Text>
-        <Ingredients ingredients={ingredients} />
+        <Ingredients ingredients={ingredients}/>
 
         <Text>Directions</Text>
         <Directions directions={directions} />
