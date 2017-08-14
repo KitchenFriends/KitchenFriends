@@ -13,14 +13,19 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "node node_modules/jest/bin/jest.js --watch"
-  },
+    "test": "node node_modules/jest/bin/jest.js --watch",
+    "server": "nodemon server/app"
+  },  
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "expo": "^19.0.0",
+    "express": "^4.15.4",
     "knex": "^0.13.0",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.11.0",
     "pg": "^7.0.2",
     "react": "16.0.0-alpha.12",
     "react-native": "^0.46.1",
